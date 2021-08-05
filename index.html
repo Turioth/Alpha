@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-		<title>Kinesis v0.0.1
-		</title>
+		<meta charset="utf-8">
+		<title>Kinesis v0.0.1</title>
 	</head>
+	
 	<body>
-		<p>This is a test.</p>
+		<p>Ki: <span id="ki">0</span></p>
+		<button onClick = "addKi(1)">Meditate!</button>
+		<script>
+			var ki = 0;
+			background = "#3C3C3C"; //Background Color
+			
+			function addKi(amount){
+				ki = ki + amount;
+				document.getElementById("ki").innerHTML = ki;
+				}
+		</script>
 	</body>
 </html>
