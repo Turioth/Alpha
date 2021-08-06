@@ -9,7 +9,7 @@
 	
 	<body style = "background-color: lightblue;">
 		<p>Ki: <span id="ki">0</span></p>
-		<button onClick = "addKi(1)">Meditate!</button>
+		<button onClick = "addKi(0.001)">Meditate!</button>
 		<script>
 			var ki = 0;
 			
@@ -17,6 +17,7 @@
 				ki = ki + amount;
 				document.getElementById("ki").innerHTML = ki;
 				}
+			
 		</script>
 	</body>
 </html>
