@@ -5,19 +5,59 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta charset="utf-8">
 		<title>Kinesis v0.0.1</title>
+		<style>
+			
+			.progress {
+				height: 30px;
+				width: 300px;
+				background-color: #d8d8d8;
+				border-radius: 20px;
+			}
+			
+			.progress-done {
+				background: linear-gradient(to left, #F2709C, #FF9472);
+				box-shadow: 0px 3px 3px -5px gray;
+				border-radius: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: 1s ease;
+				height: 100%;
+				width: 0;
+				opacity: 0;
+			}
+		</style>
 	</head>
 	
 	<body style = "background-color: lightblue;">
-		<p>Ki: <span id="ki">0</span></p>
-		<button onClick = "addKi(0.001)">Meditate!</button>
+		<p>Ki: <span id="ki">1</span></p>
+		<button onClick = "Meditation(10)">Meditate!</button>
+		<div class = "progress">
+			<div class = "progress-done" data-done="0">
+				0%
+			</div>
+		</div>
+		
 		<script>
 			var ki = 1;
 			
-			function addKi(amount){
-				ki = ki + amount;
-				document.getElementById("ki").innerHTML = ki;
+		function Meditation(){
+			var progress = document.querySelector('.progress-done');
+			var medBarWidth = 1;
+			var id = setInterval(frame, 60);
+			function frame(){
+				if (medBarWidth >= 100){
+					clearInterval(id);
+					ki = ki + 10;
 				}
-			
+				else{
+					medBarWidth++;
+					progress.style.width = medBarWidth + '%';
+					progress.style.opacity = 1;
+				}
+			}
+			document.getElementById("ki").innerHTML = ki;
+		}
 		</script>
 	</body>
 </html>
