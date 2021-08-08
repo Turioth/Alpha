@@ -8,35 +8,21 @@
 		<title>Kinesis v0.0.1</title>
 	</head>
 	
-	<body style = "background-color: lightblue;">
-		<p>Ki: <span id="ki">1</span></p>
-		<button onClick = "Meditation(10)">Meditate!</button>
+	<body>
+		<h1>Kinesis v0.0.1</h1>
+		<br>
+		<br>
+		<div id = "Ki">
+			<p>Ki: <span id="ki">1</span></p>
+		</div>
 		<div class = "progress">
 			<div class = "progress-done" data-done="0">
 				0%
 			</div>
 		</div>
+		<br>
+		<button class = "buttons" onClick = "Meditation(10)">Meditate!</button>
 		
-		<script>
-			var ki = 1;
-			
-		function Meditation(){
-			var progress = document.querySelector('.progress-done');
-			var medBarWidth = 1;
-			var id = setInterval(frame, 60);
-			function frame(){
-				if (medBarWidth >= 100){
-					clearInterval(id);
-					ki = ki + 10;
-				}
-				else{
-					medBarWidth++;
-					progress.style.width = medBarWidth + '%';
-					progress.style.opacity = 1;
-				}
-			}
-			document.getElementById("ki").innerHTML = ki;
-		}
-		</script>
+		<script src="functions.js?v=               127" charset="utf-8" type="text/javascript"></script>
 	</body>
 </html>
